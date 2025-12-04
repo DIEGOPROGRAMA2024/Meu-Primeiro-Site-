@@ -1,4 +1,6 @@
-/* Estilo geral */
+/* ============================
+   ESTILO GERAL
+=============================== */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -7,7 +9,21 @@ body {
   color: #333;
 }
 
-/* Cabeçalho */
+/* Fontes adaptadas com VW */
+h1 { font-size: 4vw; }
+h2 { font-size: 3vw; }
+p  { font-size: 2vw; }
+
+/* Limite mínimo para não ficar pequeno demais */
+@media (min-width: 900px) {
+  h1 { font-size: 35px; }
+  h2 { font-size: 28px; }
+  p  { font-size: 18px; }
+}
+
+/* ============================
+   CABEÇALHO
+=============================== */
 header {
   background-color: #4CAF50;
   color: white;
@@ -15,18 +31,19 @@ header {
   text-align: center;
 }
 
-/* Menu de navegação */
+/* ============================
+   MENU DE NAVEGAÇÃO
+=============================== */
+nav {
+  background-color: #333;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: #333;
-}
-
-nav ul li {
-  margin: 0;
 }
 
 nav ul li a {
@@ -42,7 +59,51 @@ nav ul li a:hover {
   background-color: #575757;
 }
 
-/* Centralizar apenas o Início */
+/* ===== MENU HAMBÚRGUER (MOBILE) ===== */
+.menu-btn {
+  display: none;
+  cursor: pointer;
+  padding: 15px;
+  color: white;
+  background-color: #333;
+}
+
+.menu-btn div {
+  width: 30px;
+  height: 4px;
+  background: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    display: none;
+    text-align: center;
+  }
+
+  .menu-btn {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul.show {
+    display: block;
+  }
+}
+
+/* ============================
+   IMAGENS RESPONSIVAS
+=============================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================
+   SEÇÃO CENTRALIZADA
+=============================== */
 #inicio {
   max-width: 900px;
   margin: 0 auto;
@@ -50,12 +111,16 @@ nav ul li a:hover {
   padding: 20px;
 }
 
-/* Centralizar todas as tabelas */
+/* ============================
+   TABELAS RESPONSIVAS
+=============================== */
 table {
-  width: 80%;       /* largura reduzida para melhor visual */
+  width: 100%;
   border-collapse: collapse;
-  margin: 20px auto; /* centraliza horizontalmente */
-  text-align: center;
+  margin: 20px auto;
+  max-width: 900px;
+  display: block;
+  overflow-x: auto;
 }
 
 table, th, td {
@@ -63,7 +128,9 @@ table, th, td {
   padding: 10px;
 }
 
-/* Centralizar apenas o formulário de Contato */
+/* ============================
+   FORMULÁRIO DE CONTATO
+=============================== */
 #contato form {
   display: block;
   margin: 0 auto;
@@ -73,7 +140,7 @@ table, th, td {
 
 form input, form textarea, form button {
   display: block;
-  margin: 10px auto;  /* centraliza os campos */
+  margin: 10px auto;
   padding: 10px;
   width: 100%;
   max-width: 400px;
@@ -92,7 +159,9 @@ form button:hover {
   background-color: #45a049;
 }
 
-/* Rodapé */
+/* ============================
+   RODAPÉ
+=============================== */
 footer {
   background-color: #333;
   color: white;
